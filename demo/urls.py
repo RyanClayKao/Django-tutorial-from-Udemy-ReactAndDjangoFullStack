@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import Another
+from .views import Another, BookDao
 
 urlpatterns = [
     # demo/
@@ -13,4 +13,5 @@ urlpatterns = [
     # 使用 class view 的方式
     # demo/another/
     path('another', Another.as_view()),
+    path('books', BookDao.as_view()),
 ]
