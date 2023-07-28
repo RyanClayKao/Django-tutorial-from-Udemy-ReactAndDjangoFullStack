@@ -8,3 +8,7 @@ class Book(models.Model):
     published = models.DateField(blank = True, null = True, default = None)
     is_published = models.BooleanField(default = False)
     cover = models.ImageField(upload_to = "covers/", blank = True)
+
+    # 這個方式可以在管理者進入 Book管理介面時，列表中指定呈現特定欄位 (方便查看)
+    def __str__(self):
+        return self.title
