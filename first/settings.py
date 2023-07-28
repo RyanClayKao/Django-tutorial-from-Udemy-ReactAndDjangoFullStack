@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 加入 django REST framework
-    'rest_framework'
+    'rest_framework',
     # 加入 app 名稱，在 makemigration時，才能在 demo/migrations 建立 migration 紀錄
     'demo'
 ]

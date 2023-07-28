@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.views import View
 from .models import Book
 from django.shortcuts import render
+from rest_framework import viewsets
+from .serializers import BookSerializer
 
 # Create your views here.
 def rootPath(request):
@@ -67,3 +69,9 @@ def template1(request):
         'message': "this message is from backend.",
         'books': books
     })
+
+
+# ======= 使用 rest_framework，來呈現 API 介面(可以想像成 Swagger)======
+class BookViewSet(viewsets.ModelViewSet):
+    serializer_class = BookSerializer
+    queryset = Book.objects.all()
