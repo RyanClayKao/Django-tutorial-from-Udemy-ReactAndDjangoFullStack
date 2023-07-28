@@ -6,12 +6,12 @@ urlpatterns = [
     # demo/
     path('', views.rootPath),
     # demo/first/
-    path('first', views.first),
+    path('first/', views.first),
     # demo/second/
-    path('second', views.second),
+    path('second/', views.second),
 
     # 使用 class view 的方式
     # demo/another/
-    path('another', Another.as_view()),
-    path('books', BookDao.as_view()),
+    path('another/', Another.as_view()),
+    path('books/', BookDao.as_view()),
 ]
