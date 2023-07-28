@@ -5,4 +5,4 @@ class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
         # 設定回傳後可顯示的欄位有哪些
-        fields = ['title', 'description', 'price']
+        fields = ['id', 'title', 'description', 'price', 'published', 'is_published']
