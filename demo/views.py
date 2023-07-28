@@ -61,4 +61,9 @@ class BookDao(View):
 
 # ============= 使用 template ============
 def template1(request):
-    return render(request, 'template1.html')
+    books = Book.objects.all()
+
+    return render(request, 'template1.html', {
+        'message': "this message is from backend.",
+        'books': books
+    })

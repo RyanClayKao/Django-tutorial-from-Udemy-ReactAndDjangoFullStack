@@ -8,5 +8,40 @@
 </head>
 <body>
     <h1>This is first template page.</h1>
+
+    <p>{{ message }}</p>
+
+    <hr>
+
+    <h3>使用迴圈方式呈現所有 book資料</h3>    
+    <ul>
+        {% for book in books %}
+            <li>
+                <span>id: {{ book.id }}</span> 
+                <ul>
+                    <li><span>title: {{ book.title }}</span></li>
+                    <li><span>is_published: {{ book.is_published }}</span></li>
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h3>使用迴圈搭配if判斷，只顯示 is_published = True 的資料</h3>
+    <ul>
+        {% for book in books %}
+            {% if book.is_published %}
+                <li>
+                    <span>id: {{ book.id }}</span> 
+                    <ul>
+                        <li>
+                            <span>title: {{ book.title }}</span>
+                        </li>
+                    </ul>
+                </li>
+            {% endif %}            
+        {% endfor %}
+    </ul>
 </body>
 </html>
