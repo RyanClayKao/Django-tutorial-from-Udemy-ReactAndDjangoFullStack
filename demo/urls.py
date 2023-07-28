@@ -14,4 +14,7 @@ urlpatterns = [
     # demo/another/
     path('another/', Another.as_view()),
     path('books/', BookDao.as_view()),
+
+    # 使用 template 來渲染呈現 html
+    path('template1', views.template1)
 ]

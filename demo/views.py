@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
 from .models import Book
+from django.shortcuts import render
 
 # Create your views here.
 def rootPath(request):
@@ -55,3 +56,9 @@ class BookDao(View):
     def get(self, request):      
         # self 指的是現在這個類別，所以可以用物件導向的方式來取用類別中的屬性 
         return HttpResponse(self.outputHtmlString)
+
+
+
+# ============= 使用 template ============
+def template1(request):
+    return render(request, 'template1.html')
